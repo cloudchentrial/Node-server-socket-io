@@ -3,8 +3,8 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var players = [];
 
-server.listen(8080, function(){
-    console.log("Server is now running...");
+server.listen(process.env.PORT || 8080, function(){
+    console.log("Server is now running..." + String(process.env.PORT));
 });
 
 io.on('connection', function(socket){
